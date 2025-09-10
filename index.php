@@ -10,7 +10,7 @@
    		</form>
 		<script src="main.js"></script>
 		<footer class="bottomrow">
-		<p style="font-family: 'Courier New', monospace;" id="bottom">jBin <a href="<?php include 'settings.php'; echo($storagePath); ?>/LICENSE.html">(C)</a> |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 B used | <a href="javascript:document.getElementById(`submitform`).submit();">save</a> | <a href="javascript:document.getElementById(`rawsetting`).value = `true`;javascript:document.getElementById(`submitform`).submit();">save raw</a></p>
+		<p style="font-family: 'Courier New', monospace;" id="bottom">jBin <a href="<?php include 'settings.php'; echo($urlStoragePath); ?>/LICENSE.html">(C)</a> |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 B used | <a href="javascript:document.getElementById(`submitform`).submit();">save</a> | <a href="javascript:document.getElementById(`rawsetting`).value = `true`;javascript:document.getElementById(`submitform`).submit();">save raw</a></p>
 		</footer>
 	</body>
 </html>
