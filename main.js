@@ -10,7 +10,6 @@ document.addEventListener("keydown", e=>{
 	if(e.keyCode === 9 && e.shiftKey) {
 		e.preventDefault();
 		let v = txt.value, s = Math.max(0,txt.selectionStart-1), end = Math.max(0,txt.selectionEnd-1);
-		console.log(s,end,v.substring(0,s),v.substring(end));
 		let prev = v;
 		if(v.substring(end).search(/\t/) < 0) return false;
 		txt.value = v.substring(0,s)+v.substring(end).replace(/\t/, "");

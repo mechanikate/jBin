@@ -1,4 +1,4 @@
 RewriteEngine On
-RewriteBase /
+RewriteBase /jbin
 # Change the "r" in ^r/ to be the same as $rawPath in settings.php.
 RewriteRule ^r/(.*)$ retrieve.php?q=$1 [PT,L,QSA] 

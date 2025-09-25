@@ -12,4 +12,6 @@ textarea {
 	background-color: black; 
 	color: #fff;
 }
-
+.monospace {
+	font-family: "Courier New", monospace;
+}
