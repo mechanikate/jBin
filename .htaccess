@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^r/(.*)$ retrieve.php?q=$1 [PT,L,QSA]

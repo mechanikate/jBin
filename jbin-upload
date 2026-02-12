@@ -1,0 +1,31 @@
+#!/usr/bin/python
+
+import requests, argparse, sys
+
+# command: curl -F'text=@file.txt' https://matthy.dev/jbin/cli.php > test.txt
+
+parser = argparse.ArgumentParser(
+        prog="jbin-upload",
+        description="Uploads input to jbin hoster")
+
+parser.add_argument("-l", "--upload-url")
+parser.add_argument("-f", "--filename")
+parser.add_argument("-i", "--input")
+parser.add_argument("-s", "--server", default="https://matthy.dev/jbin/cli.php")
+parsed = parser.parse_args()
+
+read_stdin = sys.stdin.read()
+if not parsed.upload_url and not parsed.filename and not parsed.input and not read_stdin:
+    raise ValueError("No input specified!")
+
+txt = ""
+if parsed.upload_url:
+    txt = requests.get(parsed.upload_url).text
+elif parsed.filename:
+    txt = open(parsed.filename, "rb")
+elif parsed.input:
+    txt = parsed.input
+elif read_stdin:
+    txt = read_stdin
+
+print(requests.post(parsed.server, {"text": txt}).text)
